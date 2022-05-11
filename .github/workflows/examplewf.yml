@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Update Comment
-        uses: peter-evans/create-or-update-comment@v2
+      - uses: peter-evans/create-or-update-comment@v2
         with:
             body: This is a comment!
           
