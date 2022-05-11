@@ -5,7 +5,9 @@ on:
       - ".github/**"
     branches:
       - main
-      - dev
+
+  workflow_dispatch:
+    
 jobs:
   tests:
     name: Run all tests
