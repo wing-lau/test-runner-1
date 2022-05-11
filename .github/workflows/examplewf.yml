@@ -24,12 +24,17 @@ jobs:
       - name: Checkout current repository
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
-
+      
+      # Runs a command to find the PR Number
+      - name: Find current PR number
+        run: PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+      
       # Runs a single command using the runners shell
       - name: Update Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-            body: This is a comment!
+          comment-id: $PR_NUMBER
+          body: This is a comment!
           
 
       # Runs a set of commands using the runners shell
