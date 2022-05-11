@@ -33,7 +33,7 @@ jobs:
       - name: Update Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          issue-number: ${{ github.event.number }}
+          issue-number: refs/pull/:prNumber/merge
           body: This is a comment!
           
 
