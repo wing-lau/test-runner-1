@@ -33,7 +33,7 @@ jobs:
       - name: Update Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          comment-id: $PR_NUMBER
+          issue-number: $PR_NUMBER
           body: This is a comment!
           
 
